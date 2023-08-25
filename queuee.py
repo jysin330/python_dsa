@@ -1,0 +1,27 @@
+# from collections import deque
+# mylist=deque()
+# mylist.append(4)
+# mylist.append(8)
+# mylist.append(3)
+# mylist.append(6)
+# print(mylist)
+# mylist.popleft()
+# print(mylist)
+# mylist.popleft()
+# print(mylist)
+
+
+# from queue import Queue
+# mylist=Queue()
+# mylist.put(3)
+# mylist.put(8)
+# mylist.put(9)
+# mylist.put(2)
+# mylist.put(5)
+# print(list(mylist))
+# mylist.get()
+# print(list(mylist))
+# mylist.get()
+# print(list(mylist))
+# mylist.get()
+# print(list(mylist))
