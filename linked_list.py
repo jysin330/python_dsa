@@ -49,6 +49,29 @@ class linkedlist:
             print(temp.data)
             temp = temp.next
 
+    def delete(self, key):
+        temp = self.head
+        # case1
+        if temp is not None:
+            if temp.data == key:
+                self.head = temp.next
+                temp = None
+                return
+
+        # case2
+        while (temp is not None):
+            if temp.data == key:
+                break
+            prev = temp
+            temp = temp.next
+
+        # case3
+        if temp is None:
+            return "there is no linkedlist"
+
+        prev.next = temp.next
+        temp = None
+
 
 if __name__ == "__main__":
     llist = linkedlist()
