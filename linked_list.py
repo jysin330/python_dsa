@@ -52,25 +52,57 @@ class linkedlist:
     def delete(self, key):
         temp = self.head
         # case1
+        if temp == None:
+            print("No linkedlist is there")
+            return
+        # case2
         if temp is not None:
             if temp.data == key:
                 self.head = temp.next
                 temp = None
                 return
-
-        # case2
+        # case3
         while (temp is not None):
             if temp.data == key:
                 break
             prev = temp
             temp = temp.next
 
-        # case3
-        if temp is None:
-            return "there is no linkedlist"
-
         prev.next = temp.next
         temp = None
+
+    # def countNode(self):
+    #     temp = self.head
+    #     count = 0
+    #     while temp:
+    #         count += 1
+    #         temp = temp.next
+
+    #     return count
+
+    def countNode(self, node):
+        if not node:
+            return 0
+        else:
+            return 1+self.countNode(node.next)
+
+    def deleteTotalList(self):
+        curr = self.head
+        while curr:
+            self.delete(curr.data)
+            curr = curr.next
+
+    def reversingLinkedList(self):
+        prev = None
+        curr = None
+        temp = self.head
+        while temp != None:
+            curr = temp.next
+            temp.next = prev
+            prev = temp
+            temp = curr
+
+        self.head = prev
 
 
 if __name__ == "__main__":
@@ -82,3 +114,8 @@ if __name__ == "__main__":
     llist.append(7)
     llist.treverse(6, 5)
     llist.print()
+    # llist.deleteTotalList()
+    llist.reversingLinkedList()
+    llist.print()
+    # print(f"number of nodes in list is {llist.countNode()}")
+    # print(f"number of nodes in list is {llist.countNode(llist.head)}")
