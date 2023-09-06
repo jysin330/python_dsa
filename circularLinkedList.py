@@ -18,11 +18,40 @@ class circularLinkedList:
 
         else:
             new_node.next = self.head
-            while temp.next != self.head:
+            while (temp.next != self.head):
                 temp = temp.next
             temp.next = new_node
             self.head = new_node
             return
+
+    def delete(self, key):
+        temp = self.head
+        prev = None
+        while (temp):
+            if temp.data == key and temp == self.head:
+                if temp.next == self.head:
+                    temp = None
+                    self.head = None
+                    return
+                else:
+                    while (temp.next != self.head):
+                        temp = temp.next
+
+                    temp.next = self.head.next
+                    self.head = self.head.next
+                    temp = None
+                    return
+
+            elif temp.data == key:
+                prev.next = temp.next
+                temp = None
+                return
+            else:
+                if temp.next == self.head:
+                    break
+
+            prev = temp
+            temp = temp.next
 
     def print(self):
         temp = self.head
@@ -39,5 +68,5 @@ llist.push(4)
 llist.push(5)
 llist.push(6)
 llist.push(7)
-
+llist.delete(6)
 llist.print()
