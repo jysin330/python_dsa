@@ -53,6 +53,18 @@ class circularLinkedList:
             prev = temp
             temp = temp.next
 
+    def countNode(self):
+        count = 0
+        temp = self.head
+
+        while temp:
+            count += 1
+            if temp.next == self.head:
+
+                break
+            temp = temp.next
+        return count
+
     def print(self):
         temp = self.head
 
@@ -68,5 +80,6 @@ llist.push(4)
 llist.push(5)
 llist.push(6)
 llist.push(7)
-llist.delete(6)
-llist.print()
+# llist.delete(6)
+print(llist.countNode())
+# llist.print()
