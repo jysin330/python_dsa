@@ -77,7 +77,7 @@ class DoublyLinkedList:
         temp = self.head
 
         while temp:
-            print(temp.data)
+            print(temp.data, end=" ")
             if temp.next == None:
                 break
             temp = temp.next
