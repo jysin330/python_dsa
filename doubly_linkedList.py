@@ -45,6 +45,21 @@ class DoublyLinkedList:
             print("no doubly linked list found")
             return
 
+    def delete(self, val):
+
+        findnode = self.findNode(val)
+
+        if findnode.prev == None:
+            self.head = findnode.next
+            findnode.next.prev = None
+        elif findnode.next == None:
+            findnode.prev.next = None
+        else:
+            findnode.prev.next = findnode.next
+            findnode.next.prev = findnode.prev
+
+        findnode = None
+
     def printdl(self):
         temp = self.head
 
@@ -63,4 +78,5 @@ dllist.push(5)
 dllist.push(6)
 # dllist.printdl()
 dllist.insertAt(4, 8)
+dllist.delete(3)
 dllist.printdl()
