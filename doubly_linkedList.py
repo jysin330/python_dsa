@@ -60,6 +60,19 @@ class DoublyLinkedList:
 
         findnode = None
 
+    def addLast(self, val):
+        new_node = Node(val)
+        temp = self.head
+
+        while temp:
+            if temp.next == None:
+                break
+
+            temp = temp.next
+
+        new_node.prev = temp
+        temp.next = new_node
+
     def printdl(self):
         temp = self.head
 
@@ -78,5 +91,7 @@ dllist.push(5)
 dllist.push(6)
 # dllist.printdl()
 dllist.insertAt(4, 8)
-dllist.delete(3)
+dllist.addLast(10)
+dllist.addLast(60)
+# dllist.delete(3)
 dllist.printdl()
