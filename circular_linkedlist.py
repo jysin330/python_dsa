@@ -4,9 +4,13 @@ class Node:
         self.next = None
 
 
+
+
 class CircularLinkedList:
     def __init__(self):
         self.head = None
+
+
 
     def push(self, new_data):
         new_node = Node(new_data)
